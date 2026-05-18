@@ -8,35 +8,58 @@ Guia de configuración post instalación Omarchy en CachyOS
 
 ---
 
-### --- 🛠️ 1. Programas e Integraciones del Entorno --- ###
+## --- 🛠️ 1. Programas e Integraciones del Entorno --- ##
 
-update repositories: sudo pacman -Syu -> descarga paquete oficiales
+Update repositories: 
+```bash
+sudo pacman -Syu  # descarga paquete oficiales
+```
 
 
 1. Zed: Editor de texto
-    sudo pacman -S zed
+```bash
+sudo pacman -S zed
+```
 2. Telegram:
-    sudo pacman -S telegram-desktop
+```bash
+sudo pacman -S telegram-desktop
+```
 3. ProtonVPN:
-    yay -S proton-vpn-gtk-app
+```bash
+yay -S proton-vpn-gtk-app
+```
 4. Brave:
-    yay -Sy brave-bin
+```bash
+yay -Sy brave-bin
+```
 5. Explorador de Archivos (Terminal): Yazi o Ranger
-    sudo pacman -S yazi
-    sudo pacman -S ranger
+```bash
+sudo pacman -S yazi
+sudo pacman -S ranger
+```
 6. Captura de pantalla:
-    sudo pacman -S grim slurp
+```bash
+sudo pacman -S grim slurp
+```
 7. Kitty (Terminal)
-    sudo pacman -S kitty
+```bash
+sudo pacman -S kitty
+```
 8. Dolphin (Gestor de Archivos)
-    sudo pacman -S dolphin konsole kio-extras
+```bash
+sudo pacman -S dolphin konsole kio-extras
+```
 9. INSTALACION: Interfaces de comando SHELL 
-    # Interfaz de comando SHELL: Zsh
-      sudo pacman -S zsh
-      chsh -s /usr/bin/zsh -> hace Zsh el shell predeterminado (Importante reiniciar)
-    # Interfaz de comando SHELL: Fish
-      sudo pacman -S fish -> instala Fish
-      chsh -s /usr/bin/fish -> hace Fish el shell predeterminado
+    ### Interfaz de comando SHELL: Zsh
+```bash
+sudo pacman -S zsh     # instala Zsh
+chsh -s /usr/bin/zsh   # hace Zsh el shell predeterminado (Importante reiniciar)
+```
+    ### Interfaz de comando SHELL: Fish
+```bash
+sudo pacman -S fish     # instala Fish
+chsh -s /usr/bin/fish   # hace Fish el shell predeterminado
+```
 
     ##---PERSONALIZAR: Interfaz de comando SHELL (Fish)---##
     # Descarga fuentes:
