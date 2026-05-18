@@ -27,7 +27,7 @@
 ➪Compositor Gráfico: 🪟 Hyprland (Entorno dinámico tipo Tiling basado en Wayland)
 ➪Capa de Estructura: 🎨 Omarchy Framework (Estandarización visual y atajos dinámicos)
 ➪Línea de Comandos: 🐟 Fish Shell (Personalizado mediante el asistente Tide)
-
+'''
 
 ## --- 🛠️ 1. Programas e Integraciones del Entorno --- ##
 
@@ -87,45 +87,54 @@ chsh -s /usr/bin/fish   # hace Fish el shell predeterminado
 Fuentes:
 https://www.nerdfonts.com/font-downloads
 
-Instalar fuente:
+●Instalar fuente:
 '''bash
 sudo pacman -S ttf-jetbrains-mono-nerd
 '''
-Asistente de diseño (Tide):
+
+●Asistente de diseño (Tide):
 '''bash
 sudo pacman -S tide
 '''
-Instalar Fisher (gestor de extensiones):
+
+●Instalar Fisher (gestor de extensiones):
 '''bash
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 '''
-Instalar el tema Tide:
+
+●Instalar el tema Tide:
 '''bash
 fisher install IlanCosman/tide@v6
 '''
-Ejecutar el asistente de configuraicón:
+
+●Ejecutar el asistente de configuraicón:
 '''bash
 tide configure #### El asistente limpiará la pantalla y te hará una serie de preguntas visuales paso a paso. ####
 '''
+
 10. Reproductor multmedia (vlc)
 '''bash
 sudo pacman -S vlc
 '''
+
 11. Lluvia Matrix
 '''bash
 sudo pacman -S cmatrix
 '''
+
 12. Ferdium: Una sola App para Todo (Alternativa Todo-en-Uno)
 Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
 '''bash
 paru -S ferdium-bin
 '''
+
 13. fastfetch: Muestra información del sistema en la terminal
 '''bash
 sudo pacman -S fastfetch
 fastfetch #### Visual del logo del SO en la terminal ####
 micro ~/.config/fish/config.fish #### Abre el archivo de configuración de fish para personalizar la terminal ####
 '''
+
 14. Visualizador de imágenes (loupe)
 '''bash
 sudo pacman -S loupe
