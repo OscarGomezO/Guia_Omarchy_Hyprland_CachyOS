@@ -70,43 +70,42 @@ sudo pacman -S kitty
 ```bash
 sudo pacman -S dolphin konsole kio-extras
 ```
-9. Interfaces de comando SHELL 
-#### 1. Interfaz de comando SHELL: Zsh ####
+9. #### Interfaces de comando SHELL ####
+9.1. Interfaz de comando SHELL: Zsh
 ```bash
 sudo pacman -S zsh     # instala Zsh
 chsh -s /usr/bin/zsh   # hace Zsh el shell predeterminado (Importante reiniciar)
 ```
 
-#### 2. Interfaz de comando SHELL: Fish ####
+9.2. Interfaz de comando SHELL: Fish
 ```bash
 sudo pacman -S fish     # instala Fish
 chsh -s /usr/bin/fish   # hace Fish el shell predeterminado
 ```
 
 9.1. --- PERSONALIZAR: Interfaz de comando <Fish> ---
-#### Descarga fuentes: ####
-'''bash
-  https://www.nerdfonts.com/font-downloads
-'''
-#### Instalar fuente ####
+Fuentes:
+https://www.nerdfonts.com/font-downloads
+
+Instalar fuente:
 '''bash
   sudo pacman -S ttf-jetbrains-mono-nerd
 '''
-#### Asistente de diseño (Tide) ####
+Asistente de diseño (Tide):
 '''bash
   sudo pacman -S tide
 '''
-#### Instalar Fisher (gestor de extensiones) ####
+Instalar Fisher (gestor de extensiones):
 '''bash
   curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 '''
-#### Instalar el tema Tide ####
+Instalar el tema Tide:
 '''bash
   fisher install IlanCosman/tide@v6
 '''
-    #### Ejecuta el comando ####
-    '''bash
-      tide configure -> #El asistente limpiará la pantalla y te hará una serie de preguntas visuales paso a paso.
+Ejecutar el asistente de configuraicón:
+'''bash
+      tide configure #### El asistente limpiará la pantalla y te hará una serie de preguntas visuales paso a paso. ####
     '''
 
 10. Reproductor multmedia (vlc)
