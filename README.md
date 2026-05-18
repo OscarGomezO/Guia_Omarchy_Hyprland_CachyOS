@@ -320,65 +320,85 @@ killall waybar && waybar &
 ----|
 Documentación: https://github.com/Alexays/Waybar/wiki
 
-----------------------------------------------------------------------------|
-    Configuración CachyOS+Omarchy/                                          |
-    ├── .config/                                                            |
-    │   ├── hypr/                                                           |
+```
+    Configuración CachyOS+Omarchy/                                          
+    ├── .config/                                                            
+    │   ├── hypr/                                                           
     │   │   ├── hyprland.conf 𖤓 <-- Archivo de configuración principal     
     │   │   ├── keybindings.conf
     │   │   └── looknfeel.conf  
-    
+```
+
+
 1.4. BLUETHOOT
-'''bash
-# Instalación de paquetes.
+Instalación de paquetes.
+```bash
 sudo pacman -S bluez bluez-utils blueman
-# Encender el servicio.
+```
+Encender el servicio.
+```bash
 sudo systemctl enable --now bluetooth.service
-# Activación automática al iniciar (Hyprland)
+```
+Activación automática al iniciar (Hyprland)
+```bash
 micro ~/.config/hypr/hyprland.conf
-# Añade la directiva de autoarranque:
+```
+Añade la directiva de autoarranque:
+```bash
 exec-once = blueman-applet
-'''
+```
 
-1.5. Control de VOLUMEN Visual
-'''bash
-# Instalación de paquetes.
+1.5. Control de ### VOLUMEN ### +/- Visual
+Instalación de paquetes.
+```bash
 sudo pacman -S volumeicon pavucontrol
-# Autoarranque en Hyprland
+```
+Autoarranque en Hyprland
+```bash
 micro ~/.config/hypr/hyprland.conf
-# Añade la directiva de autoarranque:
+```
+Añade la directiva de autoarranque:
+```bash
 exec-once = volumeicon
-'''
+```
 
-1.6. Control de Brillo de Pantalla
-'''bash
+1.6. Control de ### BRILLO ### de Pantalla
+```bash
 #Instalación de paquetes.
 sudo pacman -S brightnessctl
 #Autoarranque en Hyprland
 micro ~/.config/hypr/hyprland.conf
 #Añade la directiva de autoarranque:
 exec-once = brightnessctl
-'''
+```
 
-# Atajos para controlar el Brillo de pantalla (Subir / Bajarn en pasos de 5%)
+Atajos para controlar el Brillo de pantalla (Subir / Bajarn en pasos de 5%)
+```bash
 binde = , XF86MonBrightnessUp, exec, brightnessctl set +5%
 binde = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+```
 
-# Atajos para controlar el Volumen (Subir / Bajar / Mutear)
+Atajos para controlar el Volumen (Subir / Bajar / Mutear)
+```bash
 binde = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 binde = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 binde = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+```
 
-1.7. Aplicacion gráfica wdisplays
-#Instalación de paquetes.
+
+1.7. Aplicacion ### GRÁFICA ### wdisplays
+Instalación de paquetes.
+```bash
 sudo pacman -S wdisplays
-#Usa la aplicacion
-
-
-#Información sobre el monitor                                               |  
-hyprctl monitors                                                            |    
-                                                                            |  
---------------------------------------------------------------------------------|
+```
+Usa la aplicacion
+```bash
+wdisplays
+```
+Información sobre el monitor
+```bash
+hyprctl monitors
+```
 
 ### ── Intérpretes de Comando (Shell) y Personalización
 * [cite_start]**Fish Shell:** Configurado como el intérprete predeterminado del sistema operativo (`chsh -s /usr/bin/fish`)[cite: 14].
