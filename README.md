@@ -120,7 +120,7 @@ sudo pacman -S vlc
 11. Lluvia Matrix
 ```bash
 sudo pacman -S cmatrix
-'''
+```
 
 12. Ferdium: Una sola App para Todo (Alternativa Todo-en-Uno)
 Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
@@ -143,15 +143,19 @@ sudo pacman -S loupe
 
 ### --- 🎨 2. CONFIGURACION APARIENCIA ENTORNO VISUAL: --- ####
 
+```
 Configuración CachyOS+Omarchy/
 ├── .config/
 │   ├── hypr/
 │   │   ├── hyprland.conf
 │   │   ├── keybindings.conf
 │   │   └── looknfeel.conf 𖤓  <-- Variablesde entorno visual
+```
 
 1.1. Accede al archivo looknfeel.conf
+```bash
     micro ~/.config/hypr/looknfeel.conf
+```
 1.2. Edita las variables {decoration; animations; layout; scrolling}
     Links:
     https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
@@ -170,8 +174,10 @@ https://github.com/aorumbayev/awesome-omarchy
     Estructurar tu sistema y automatizar la apertura de archivos, utilizamos el estándar de Linux llamado MIME Types mediante la herramienta oficial xdg-utils.
 
     1.1.1. Herramientas necesarias:
+    ```bash
     sudo pacman -S xdg-utils archlinux-xdg-menu
-
+    ```
+    
     1.2.1. Asignar las aplicaciones predeterminadas
     ```bash
     # 1. Archivos de texto plano (.txt, .md, .cfg, .conf) para Zed
