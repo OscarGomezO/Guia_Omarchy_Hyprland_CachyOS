@@ -141,9 +141,10 @@ sudo pacman -S loupe
 ```
 
 
-### --- 🎨 2. CONFIGURACION APARIENCIA ENTORNO VISUAL: --- ####
+### --- 🎨 2. CONFIGURACION APARIENCIA ENTORNO VISUAL --- ####
 
-```
+``` Ruta del archivo looknfeel.conf
+
 Configuración CachyOS+Omarchy/
 ├── .config/
 │   ├── hypr/
@@ -154,7 +155,7 @@ Configuración CachyOS+Omarchy/
 
 1.1. Accede al archivo looknfeel.conf
 ```bash
-    micro ~/.config/hypr/looknfeel.conf
+micro ~/.config/hypr/looknfeel.conf
 ```
 1.2. Edita las variables {decoration; animations; layout; scrolling}
     Links:
@@ -164,60 +165,72 @@ Configuración CachyOS+Omarchy/
     https://wiki.hypr.land/Configuring/Basics/Variables/#layout
     https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/
 
-DESCARGA + ENTORNOS DE GITHUB
+➕ ENTORNOS EN GITHUB
 https://github.com/aorumbayev/awesome-omarchy
 
 
 ### --- 📝 3. DISEÑO DE ENTORNO FUNCIONES DEL SISTEMA: --- ####
 
-1.1 Apertura de archivos por defecto.
-    Estructurar tu sistema y automatizar la apertura de archivos, utilizamos el estándar de Linux llamado MIME Types mediante la herramienta oficial xdg-utils.
+1.1. Apertura de archivos por defecto.
+
+    ### Estructurar tu sistema y automatizar la apertura de archivos, utilizamos el estándar de Linux llamado MIME Types mediante la herramienta oficial xdg-utils.
 
     1.1.1. Herramientas necesarias:
-    ```bash
-    sudo pacman -S xdg-utils archlinux-xdg-menu
-    ```
+```bash
+sudo pacman -S xdg-utils archlinux-xdg-menu
+```
     
-    1.2.1. Asignar las aplicaciones predeterminadas
-    ```bash
+    1.2.1. Asignar aplicaciones predeterminadas
+    
     # 1. Archivos de texto plano (.txt, .md, .cfg, .conf) para Zed
-    xdg-mime default zed.desktop text/plain
+```bash
+xdg-mime default zed.desktop text/plain
+```
     # 2. Videos (.mp4, .mkv, .avi) para VLC
-    xdg-mime default vlc.desktop video/mp4
-    xdg-mime default vlc.desktop video/x-matroska
-    xdg-mime default vlc.desktop video/x-msvideo
-    # 3. Música y Audio (.mp3, .flac, .wav) para VLC
-    xdg-mime default vlc.desktop audio/mpeg
-    xdg-mime default vlc.desktop audio/ogg
-    xdg-mime default vlc.desktop audio/x-wav
+```bash
+xdg-mime default vlc.desktop video/mp4
+xdg-mime default vlc.desktop video/x-matroska
+xdg-mime default vlc.desktop video/x-msvideo
+# 3. Música y Audio (.mp3, .flac, .wav) para VLC
+xdg-mime default vlc.desktop audio/mpeg
+xdg-mime default vlc.desktop audio/ogg
+xdg-mime default vlc.desktop audio/x-wav
+```
     # 4. Imágenes (.png, .jpg, .jpeg, .webp)
     # (Asumiendo que instalas 'loupe' con: sudo pacman -S loupe)
-    xdg-mime default loupe.desktop image/png
-    xdg-mime default loupe.desktop image/jpeg
-    xdg-mime default loupe.desktop image/webp
-    ```
-    # Verificar asignaciones
-    ```bash
-    # Verificar texto
-    xdg-mime query default text/plain
-    # Verificar video
-    xdg-mime query default video/mp4
-    # Verificar audio
-    xdg-mime query default audio/mpeg
-    ```
+```bash
+xdg-mime default loupe.desktop image/png
+xdg-mime default loupe.desktop image/jpeg
+xdg-mime default loupe.desktop image/webp
+```
 
-    1.2 Gestores de archivos visuales (THUNAR|TUMBLER)
+    1.3.1. Verificar asignaciones
+```bash
+# Verificar texto
+xdg-mime query default text/plain
+# Verificar video
+xdg-mime query default video/mp4
+# Verificar audio
+xdg-mime query default audio/mpeg
+```
+
+  1.2 Gestores de archivos visuales (THUNAR|TUMBLER)
     ¿Que son?
     thunar: El gestor visual.
     tumbler: El motor oculto que genera las miniaturas (thumbnails). Sin esto, solo verías iconos genéricos en lugar de tus fotos o portadas de videos.
-    sudo pacman -S thunar tumbler thunar-archive-plugin file-roller gvfs gvfs-mtp
-
-    # thunar-archive-plugin + file-roller: Te permiten dar clic derecho a cualquier .zip o .tar.gz y seleccionar "Extraer aquí" visualmente.
-    # gvfs + gvfs-mtp: Permite que Thunar reconozca discos externos, memorias USB y teléfonos celulares automáticamente cuando los conectas.
+```bash
+sudo pacman -S thunar tumbler thunar-archive-plugin file-roller gvfs gvfs-mtp
+```
+    ● thunar-archive-plugin + file-roller: Te permiten dar clic derecho a cualquier .zip o .tar.gz y seleccionar "Extraer aquí" visualmente.
+    ● gvfs + gvfs-mtp: Permite que Thunar reconozca discos externos, memorias USB y teléfonos celulares automáticamente cuando los conectas.
 
     1.2.1. Configurar el atajo de teclado en Hyprland
-    # Abre el archivo de configuración de Hyprland
+    Abre el archivo de configuración de Hyprland
+```bash    
     micro ~/.config/hypr/hyprland.conf
+```
+
+``` Ruta del archivo hyprland.conf
 
     Configuración CachyOS+Omarchy/
     ├── .config/
@@ -225,67 +238,76 @@ https://github.com/aorumbayev/awesome-omarchy
     │   │   ├── hyprland.conf 𖤓 <-- Archivo de configuración principal
     │   │   ├── keybindings.conf
     │   │   └── looknfeel.conf   
-    
-    # Añade la siguiente línea (o modifica la que abra el gestor de archivos antiguo):
-    bind = SUPER, E, exec, thunar  -> $mainMod es la tecla (SUPER o Windows)
-    ```bash
-    1.3.1. Forzar a Thunar como el Gestor por Defecto (Sistema XDG)
-    xdg-mime default thunar.desktop inode/directory
-    ```
-    # Abre thunar y verifica que se haya configurado correctamente
-    # Busca un archivo de texto (.txt) o un video (.mp4).
-    # Dale Clic derecho -> Abrir con otra aplicación...
-    # Selecciona Zed (para texto) o VLC (para video)
+```
 
-    # Comando abre terminar con F4 en Thunar: Aquí depende de la terminal que uses en tu Hyprland.
-    # CachyOS suele usar kitty o foot por defecto. Pon el comando correspondiente:
+    Añade la siguiente línea (o modifica la que abra el gestor de archivos antiguo):
+    bind = SUPER, E, exec, thunar  # $mainMod es la tecla (SUPER o Windows)
+    
+    
+    1.3.1. Forzar a Thunar como el Gestor por Defecto (Sistema XDG)
+```bash
+xdg-mime default thunar.desktop inode/directory
+```
+    ➪ Abre thunar y verifica que se haya configurado correctamente
+    ➪ Busca un archivo de texto (.txt) o un video (.mp4).
+    ➪ Dale Clic derecho -> Abrir con otra aplicación...
+    ➪ Selecciona Zed (para texto) o VLC (para video)
+
+    ➪ Comando abre terminal con F4 en Thunar: Aquí depende de la terminal que uses en tu Hyprland (kitty, foot, alacritty, konsole). 
+    ➪ CachyOS suele usar kitty o foot por defecto. Pon el comando correspondiente:
     ● Si usas Kitty: kitty --directory %f
     ● Si usas Foot: foot -D %f
     ● Si usas Alacritty: alacritty --working-directory %f
     
     Pestaña Atajo de teclado (Opcional): Puedes asignarle la tecla F4
     
-    ```bash
+    
     1.3.2 Personaliza Thunar
     #instala la herramienta visual de personalización de temas:
-    sudo pacman -S nwg-look
-    #Abre la herramienta de personalización de temas:
-    nwg-look
-    ```
+```bash
+sudo pacman -S nwg-look
+#Abre la herramienta de personalización de temas:
+nwg-look
+```
     
 1.3. WAYBAR
     Waybar: Barra superior de tu escritorio, se divide estrictamente en dos archivos de configuración que viven dentro de tu carpeta de usuario:
 
-INFO--|
+``` Ruta de archivos .jsonc y .css
 
     Configuración CachyOS+Omarchy/
     ├── .config/
     │   ├── waybar/
     │       ├── config.jsonc
     │       └── style.css
+```
 
-    1. config.jsonc (La Estructura): # Aquí defines qué elementos aparecen en la barra y dónde se posicionan (a la izquierda, al centro o a la derecha). También configuras el formato de la hora, los clicks, etc.
-    2. style.css (El Diseño):  # Aquí defines cómo se ven esos elementos. Es idéntico a diseñar una página web; usas código CSS para aplicar colores de fondo, bordes redondeados, sombras, fuentes y tamaños.
+    ● config.jsonc (La Estructura): Aquí defines qué elementos aparecen en la barra y dónde se posicionan (a la izquierda, al centro o a la derecha). También configuras el formato de la hora, los clicks, etc.
+    ● style.css (El Diseño): Aquí defines cómo se ven esos elementos. Es idéntico a diseñar una página web; usas código CSS para aplicar colores de fondo, bordes redondeados, sombras, fuentes y tamaños.
 
     #Ruta de archivos.
-    cd ~/.config/waybar/
-    ls  -> Ahí verás los archivos principales: config.jsonc (o simplemente config) y style.css.
-
+```bash   
+cd ~/.config/waybar/
+ls  # Ahí verás los archivos principales: config.jsonc (o simplemente config) y style.css.
+```
     1.3.1. Estructura (config.jsonc)
-    micro ~/.config/waybar/config.jsonc
-
+```bash
+micro ~/.config/waybar/config.jsonc
+```
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["clock"],
     "modules-right": ["network", "bluetooth", "pulseaudio", "battery", "tray"],
 
     1.3.2. Colores y Aspecto (style.css)
     #Si quieres cambiar los colores para que combinen exactamente con el tema oscuro de tu Thunar o los tonos de tu terminal, puedes modificar secciones como estas:
-    micro ~/.config/waybar/style.css
-
-    '''bash
-    1.3.3. Comando de Refresco en Caliente (Hot-Reload):
-    killall waybar && waybar &
-    '''
+```bash
+micro ~/.config/waybar/style.css
+```
+    
+    1.3.3. Comando de Refresco en Caliente (Hot-Reload)
+```bash
+killall waybar && waybar &
+```
 ----|
 Documentación: https://github.com/Alexays/Waybar/wiki
 
