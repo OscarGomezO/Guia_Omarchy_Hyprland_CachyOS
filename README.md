@@ -8,9 +8,266 @@ Guia de configuración post instalación Omarchy en CachyOS
 
 ---
 
-## 🛠️ 1. Programas e Integraciones del Entorno
+### --- 🛠️ 1. Programas e Integraciones del Entorno --- ###
 
-Repositorio de software esencial, utilidades de terminal y configuraciones multimedia seleccionadas para el flujo de trabajo diario.
+update repositories: sudo pacman -Syu -> descarga paquete oficiales
+
+
+1. Zed: Editor de texto
+    sudo pacman -S zed
+2. Telegram:
+    sudo pacman -S telegram-desktop
+3. ProtonVPN:
+    yay -S proton-vpn-gtk-app
+4. Brave:
+    yay -Sy brave-bin
+5. Explorador de Archivos (Terminal): Yazi o Ranger
+    sudo pacman -S yazi
+    sudo pacman -S ranger
+6. Captura de pantalla:
+    sudo pacman -S grim slurp
+7. Kitty (Terminal)
+    sudo pacman -S kitty
+8. Dolphin (Gestor de Archivos)
+    sudo pacman -S dolphin konsole kio-extras
+9. INSTALACION: Interfaces de comando SHELL 
+    # Interfaz de comando SHELL: Zsh
+      sudo pacman -S zsh
+      chsh -s /usr/bin/zsh -> hace Zsh el shell predeterminado (Importante reiniciar)
+    # Interfaz de comando SHELL: Fish
+      sudo pacman -S fish -> instala Fish
+      chsh -s /usr/bin/fish -> hace Fish el shell predeterminado
+
+    ##---PERSONALIZAR: Interfaz de comando SHELL (Fish)---##
+    # Descarga fuentes:
+      https://www.nerdfonts.com/font-downloads
+    # Instalar fuente
+      sudo pacman -S ttf-jetbrains-mono-nerd
+    # Asistente de diseño (Tide)
+      sudo pacman -S tide
+    # Instalar Fisher (gestor de extensiones)
+      curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+    # Instalar el tema Tide
+      fisher install IlanCosman/tide@v6
+    # Ejecuta el comando
+      tide configure -> #El asistente limpiará la pantalla y te hará una serie de preguntas visuales paso a paso.
+
+10. Reproductor multmedia (vlc)
+      sudo pacman -S vlc
+11. Lluvia Matrix
+      sudo pacman -S cmatrix
+12. Ferdium: Una sola App para Todo (Alternativa Todo-en-Uno)
+    # Si no quieres tener dos aplicaciones abiertas consumiendo memoria por separado, puedes instalar un organizador de mensajería como Ferdium o Rambox. Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
+      paru -S ferdium-bin
+13. fastfetch: Muestra información del sistema en la terminal
+      sudo pacman -S fastfetch
+      fastfetch -> Visual del logo del SO en la terminal
+      micro ~/.config/fish/config.fish -> Abre el archivo de configuración de fish para personalizar la terminal
+14. Visualizador de imágenes (loupe)
+      sudo pacman -S loupe
+
+
+### --- 🎨 2. CONFIGURACION APARIENCIA ENTORNO VISUAL: --- ####
+
+Configuración CachyOS+Omarchy/
+├── .config/
+│   ├── hypr/
+│   │   ├── hyprland.conf
+│   │   ├── keybindings.conf
+│   │   └── looknfeel.conf 𖤓  <-- Variablesde entorno visual
+
+1.1. Accede al archivo looknfeel.conf
+    micro ~/.config/hypr/looknfeel.conf
+1.2. Edita las variables {decoration; animations; layout; scrolling}
+    Links:
+    https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
+    https://wiki.hypr.land/Configuring/Basics/Variables/#layout
+    https://wiki.hypr.land/Configuring/Basics/Variables/#animations
+    https://wiki.hypr.land/Configuring/Basics/Variables/#layout
+    https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/
+
+DESCARGA + ENTORNOS DE GITHUB
+https://github.com/aorumbayev/awesome-omarchy
+
+
+### --- 📝 3. DISEÑO DE ENTORNO FUNCIONES DEL SISTEMA: --- ####
+
+1.1 Apertura de archivos por defecto.
+    Estructurar tu sistema y automatizar la apertura de archivos, utilizamos el estándar de Linux llamado MIME Types mediante la herramienta oficial xdg-utils.
+
+    1.1.1. Herramientas necesarias:
+    sudo pacman -S xdg-utils archlinux-xdg-menu
+
+    1.2.1. Asignar las aplicaciones predeterminadas
+    ```bash
+    # 1. Archivos de texto plano (.txt, .md, .cfg, .conf) para Zed
+    xdg-mime default zed.desktop text/plain
+    # 2. Videos (.mp4, .mkv, .avi) para VLC
+    xdg-mime default vlc.desktop video/mp4
+    xdg-mime default vlc.desktop video/x-matroska
+    xdg-mime default vlc.desktop video/x-msvideo
+    # 3. Música y Audio (.mp3, .flac, .wav) para VLC
+    xdg-mime default vlc.desktop audio/mpeg
+    xdg-mime default vlc.desktop audio/ogg
+    xdg-mime default vlc.desktop audio/x-wav
+    # 4. Imágenes (.png, .jpg, .jpeg, .webp)
+    # (Asumiendo que instalas 'loupe' con: sudo pacman -S loupe)
+    xdg-mime default loupe.desktop image/png
+    xdg-mime default loupe.desktop image/jpeg
+    xdg-mime default loupe.desktop image/webp
+    ```
+    # Verificar asignaciones
+    ```bash
+    # Verificar texto
+    xdg-mime query default text/plain
+    # Verificar video
+    xdg-mime query default video/mp4
+    # Verificar audio
+    xdg-mime query default audio/mpeg
+    ```
+
+    1.2 Gestores de archivos visuales (THUNAR|TUMBLER)
+    ¿Que son?
+    thunar: El gestor visual.
+    tumbler: El motor oculto que genera las miniaturas (thumbnails). Sin esto, solo verías iconos genéricos en lugar de tus fotos o portadas de videos.
+    sudo pacman -S thunar tumbler thunar-archive-plugin file-roller gvfs gvfs-mtp
+
+    # thunar-archive-plugin + file-roller: Te permiten dar clic derecho a cualquier .zip o .tar.gz y seleccionar "Extraer aquí" visualmente.
+    # gvfs + gvfs-mtp: Permite que Thunar reconozca discos externos, memorias USB y teléfonos celulares automáticamente cuando los conectas.
+
+    1.2.1. Configurar el atajo de teclado en Hyprland
+    # Abre el archivo de configuración de Hyprland
+    micro ~/.config/hypr/hyprland.conf
+
+    Configuración CachyOS+Omarchy/
+    ├── .config/
+    │   ├── hypr/
+    │   │   ├── hyprland.conf 𖤓 <-- Archivo de configuración principal
+    │   │   ├── keybindings.conf
+    │   │   └── looknfeel.conf   
+    
+    # Añade la siguiente línea (o modifica la que abra el gestor de archivos antiguo):
+    bind = SUPER, E, exec, thunar  -> $mainMod es la tecla (SUPER o Windows)
+    ```bash
+    1.3.1. Forzar a Thunar como el Gestor por Defecto (Sistema XDG)
+    xdg-mime default thunar.desktop inode/directory
+    ```
+    # Abre thunar y verifica que se haya configurado correctamente
+    # Busca un archivo de texto (.txt) o un video (.mp4).
+    # Dale Clic derecho -> Abrir con otra aplicación...
+    # Selecciona Zed (para texto) o VLC (para video)
+
+    # Comando abre terminar con F4 en Thunar: Aquí depende de la terminal que uses en tu Hyprland.
+    # CachyOS suele usar kitty o foot por defecto. Pon el comando correspondiente:
+    ● Si usas Kitty: kitty --directory %f
+    ● Si usas Foot: foot -D %f
+    ● Si usas Alacritty: alacritty --working-directory %f
+    
+    Pestaña Atajo de teclado (Opcional): Puedes asignarle la tecla F4
+    
+    ```bash
+    1.3.2 Personaliza Thunar
+    #instala la herramienta visual de personalización de temas:
+    sudo pacman -S nwg-look
+    #Abre la herramienta de personalización de temas:
+    nwg-look
+    ```
+    
+1.3. WAYBAR
+    Waybar: Barra superior de tu escritorio, se divide estrictamente en dos archivos de configuración que viven dentro de tu carpeta de usuario:
+
+INFO--|
+
+    Configuración CachyOS+Omarchy/
+    ├── .config/
+    │   ├── waybar/
+    │       ├── config.jsonc
+    │       └── style.css
+
+    1. config.jsonc (La Estructura): # Aquí defines qué elementos aparecen en la barra y dónde se posicionan (a la izquierda, al centro o a la derecha). También configuras el formato de la hora, los clicks, etc.
+    2. style.css (El Diseño):  # Aquí defines cómo se ven esos elementos. Es idéntico a diseñar una página web; usas código CSS para aplicar colores de fondo, bordes redondeados, sombras, fuentes y tamaños.
+
+    #Ruta de archivos.
+    cd ~/.config/waybar/
+    ls  -> Ahí verás los archivos principales: config.jsonc (o simplemente config) y style.css.
+
+    1.3.1. Estructura (config.jsonc)
+    micro ~/.config/waybar/config.jsonc
+
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "bluetooth", "pulseaudio", "battery", "tray"],
+
+    1.3.2. Colores y Aspecto (style.css)
+    #Si quieres cambiar los colores para que combinen exactamente con el tema oscuro de tu Thunar o los tonos de tu terminal, puedes modificar secciones como estas:
+    micro ~/.config/waybar/style.css
+
+    '''bash
+    1.3.3. Comando de Refresco en Caliente (Hot-Reload):
+    killall waybar && waybar &
+    '''
+----|
+Documentación: https://github.com/Alexays/Waybar/wiki
+
+----------------------------------------------------------------------------|
+    Configuración CachyOS+Omarchy/                                          |
+    ├── .config/                                                            |
+    │   ├── hypr/                                                           |
+    │   │   ├── hyprland.conf 𖤓 <-- Archivo de configuración principal     
+    │   │   ├── keybindings.conf
+    │   │   └── looknfeel.conf  
+    
+1.4. BLUETHOOT
+    '''bash
+    # Instalación de paquetes.
+    sudo pacman -S bluez bluez-utils blueman
+    # Encender el servicio.
+    sudo systemctl enable --now bluetooth.service
+    # Activación automática al iniciar (Hyprland)
+    micro ~/.config/hypr/hyprland.conf
+    # Añade la directiva de autoarranque:
+    exec-once = blueman-applet
+    '''
+
+1.5. Control de VOLUMEN Visual
+    '''bash
+    # Instalación de paquetes.
+    sudo pacman -S volumeicon pavucontrol
+    # Autoarranque en Hyprland
+    micro ~/.config/hypr/hyprland.conf
+    # Añade la directiva de autoarranque:
+    exec-once = volumeicon
+    '''
+
+1.6. Control de Brillo de Pantalla
+    '''bash
+    #Instalación de paquetes.
+    sudo pacman -S brightnessctl
+    #Autoarranque en Hyprland
+    micro ~/.config/hypr/hyprland.conf
+    #Añade la directiva de autoarranque:
+    exec-once = brightnessctl
+    '''
+    
+    # Atajos para controlar el Brillo de pantalla (Subir / Bajarn en pasos de 5%)
+    binde = , XF86MonBrightnessUp, exec, brightnessctl set +5%
+    binde = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+
+    # Atajos para controlar el Volumen (Subir / Bajar / Mutear)
+    binde = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+    binde = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    binde = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+1.7. Aplicacion gráfica wdisplays
+    #Instalación de paquetes.
+    sudo pacman -S wdisplays
+    #Usa la aplicacion
+
+
+    #Información sobre el monitor                                               |  
+    hyprctl monitors                                                            |    
+                                                                                |  
+--------------------------------------------------------------------------------|
 
 ### ── Intérpretes de Comando (Shell) y Personalización
 * [cite_start]**Fish Shell:** Configurado como el intérprete predeterminado del sistema operativo (`chsh -s /usr/bin/fish`)[cite: 14].
