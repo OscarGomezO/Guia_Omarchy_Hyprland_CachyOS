@@ -116,11 +116,13 @@ Ejecutar el asistente de configuraicón:
     '''bash
       sudo pacman -S cmatrix
     '''
+
 12. Ferdium: Una sola App para Todo (Alternativa Todo-en-Uno)
      Si no quieres tener dos aplicaciones abiertas consumiendo memoria por separado, puedes instalar un organizador de mensajería como Ferdium o Rambox. Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
      '''bash
       paru -S ferdium-bin
      '''
+
 13. fastfetch: Muestra información del sistema en la terminal
     '''bash
       sudo pacman -S fastfetch
