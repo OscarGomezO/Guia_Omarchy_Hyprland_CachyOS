@@ -89,50 +89,47 @@ https://www.nerdfonts.com/font-downloads
 
 Instalar fuente:
 '''bash
-  sudo pacman -S ttf-jetbrains-mono-nerd
+sudo pacman -S ttf-jetbrains-mono-nerd
 '''
 Asistente de diseño (Tide):
 '''bash
-  sudo pacman -S tide
+sudo pacman -S tide
 '''
 Instalar Fisher (gestor de extensiones):
 '''bash
-  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 '''
 Instalar el tema Tide:
 '''bash
-  fisher install IlanCosman/tide@v6
+fisher install IlanCosman/tide@v6
 '''
 Ejecutar el asistente de configuraicón:
 '''bash
-      tide configure #### El asistente limpiará la pantalla y te hará una serie de preguntas visuales paso a paso. ####
-    '''
-
+tide configure #### El asistente limpiará la pantalla y te hará una serie de preguntas visuales paso a paso. ####
+'''
 10. Reproductor multmedia (vlc)
-    '''bash
-      sudo pacman -S vlc
-    '''
+'''bash
+sudo pacman -S vlc
+'''
 11. Lluvia Matrix
-    '''bash
-      sudo pacman -S cmatrix
-    '''
-
+'''bash
+sudo pacman -S cmatrix
+'''
 12. Ferdium: Una sola App para Todo (Alternativa Todo-en-Uno)
-     Si no quieres tener dos aplicaciones abiertas consumiendo memoria por separado, puedes instalar un organizador de mensajería como Ferdium o Rambox. Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
-     '''bash
-      paru -S ferdium-bin
-     '''
-
+Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
+'''bash
+paru -S ferdium-bin
+'''
 13. fastfetch: Muestra información del sistema en la terminal
-    '''bash
-      sudo pacman -S fastfetch
-      fastfetch #### Visual del logo del SO en la terminal
-      micro ~/.config/fish/config.fish #### Abre el archivo de configuración de fish para personalizar la terminal
-    '''
+'''bash
+sudo pacman -S fastfetch
+fastfetch #### Visual del logo del SO en la terminal ####
+micro ~/.config/fish/config.fish #### Abre el archivo de configuración de fish para personalizar la terminal ####
+'''
 14. Visualizador de imágenes (loupe)
-    '''bash
-      sudo pacman -S loupe
-    '''
+'''bash
+sudo pacman -S loupe
+'''
 
 
 ### --- 🎨 2. CONFIGURACION APARIENCIA ENTORNO VISUAL: --- ####
