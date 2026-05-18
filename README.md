@@ -252,13 +252,19 @@ xdg-mime default thunar.desktop inode/directory
 ```
 ➪ Abre thunar y verifica que se haya configurado correctamente
 ➪ Busca un archivo de texto (.txt) o un video (.mp4).
-➪ Dale Clic derecho -> Abrir con otra aplicación...
-➪ Selecciona Zed (para texto) o VLC (para video)
 
-➪ Comando abre terminal con F4 en Thunar: Aquí depende de la terminal que uses en tu Hyprland (kitty, foot, alacritty, konsole). 
+➪ Dale Clic derecho -> Abrir con otra aplicación...
+
+➪ Selecciona Zed (para texto) o VLC (para video).
+
+➪ Comando abre terminal con F4 en Thunar: Aquí depende de la terminal que uses en tu Hyprland (kitty, foot, alacritty, konsole).
+
 ➪ CachyOS suele usar kitty o foot por defecto. Pon el comando correspondiente:
+
 ● Si usas Kitty: kitty --directory %f
+
 ● Si usas Foot: foot -D %f
+
 ● Si usas Alacritty: alacritty --working-directory %f
 
 Pestaña Atajo de teclado (Opcional): Puedes asignarle la tecla F4
@@ -285,6 +291,7 @@ Ruta de archivos .jsonc y .css
 ```
 
 ● config.jsonc (La Estructura): Aquí defines qué elementos aparecen en la barra y dónde se posicionan (a la izquierda, al centro o a la derecha). También configuras el formato de la hora, los clicks, etc.
+
 ● style.css (El Diseño): Aquí defines cómo se ven esos elementos. Es idéntico a diseñar una página web; usas código CSS para aplicar colores de fondo, bordes redondeados, sombras, fuentes y tamaños.
 
 #Ruta de archivos.
