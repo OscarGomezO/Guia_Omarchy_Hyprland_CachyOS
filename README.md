@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fomarchy.org%2Fassets%2Fimages%2Fopengraph.png&sp=1779139933T567cc61e6e3de8e0bba23feb4e01d2230202bfde8d9412abd6b8291a15321057" alt="Omarchy Logo" width="150">
+  <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fomarchy.org%2Fassets%2Fimages%2Fopengraph.png&sp=1779139933T567cc61e6e3de8e0bba23feb4e01d2230202bfde8d9412abd6b8291a15321057" alt="Omarchy Logo" width="750">
 </p>
 
 ┌───────────────────────────────────────────────────────┐
@@ -186,12 +186,14 @@ sudo pacman -S xdg-utils archlinux-xdg-menu
 ```bash
 xdg-mime default zed.desktop text/plain
 ```
-    2. Videos (.mp4, .mkv, .avi) para VLC
+2. Videos (.mp4, .mkv, .avi) para VLC
 ```bash
 xdg-mime default vlc.desktop video/mp4
 xdg-mime default vlc.desktop video/x-matroska
 xdg-mime default vlc.desktop video/x-msvideo
-# 3. Música y Audio (.mp3, .flac, .wav) para VLC
+```
+3. Música y Audio (.mp3, .flac, .wav) para VLC
+```bash
 xdg-mime default vlc.desktop audio/mpeg
 xdg-mime default vlc.desktop audio/ogg
 xdg-mime default vlc.desktop audio/x-wav
