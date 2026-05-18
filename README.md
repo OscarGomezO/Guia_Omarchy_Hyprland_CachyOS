@@ -1,12 +1,33 @@
-<<<<<<< HEAD
-# Doc-Omarchy-Hyprland-CachyOS-config
-Guia de configuración post instalación Omarchy en CachyOS
-=======
-# 🚀 Mi Configuración Personal: Omarchy + Hyprland en CachyOS
 
-[cite_start]Este repositorio contiene la documentación técnica estructurada y las recetas de despliegue para mi entorno de escritorio personalizado bajo el ecosistema de CachyOS y Omarchy.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aorumbayev/awesome-omarchy/main/assets/omarchy_logo.png" alt="Omarchy Logo" width="150">
+</p>
+
+┌────────────────────────────────────────────────────────────────────────┐
+│  🚀  Doc-Omarchy-Hyprland-CachyOS-config                               │
+└────────────────────────────────────────────────────────────────────────┘
+
+### ── 📚 Guía de Configuración Post-Instalación de Omarchy en CachyOS ──
+
+```🎨 Minimalist 🚀 Ultra-Optimized 💻 Wayland-Native```
 
 ---
+
+## 🛠️ Configuración Personal: Omarchy + Hyprland en CachyOS
+
+```>_
+ ╔═════════════════════════════════════════════════════════════════════╗
+ ║  Este repositorio contiene las recetas técnicas, automatizaciones   ║
+ ║  y comandos esenciales para el despliegue de paquetes y la          ║
+ ║  auditoría completa de funciones bajo el ecosistema de CachyOS.     ║
+ ╚═════════════════════════════════════════════════════════════════════╝
+🎛️ Componentes del Stack Core:
+
+➪Distribución Base: 🐧 Arch Linux / CachyOS (Kernels optimizados con arquitectura x86-64-v3/v4)
+➪Compositor Gráfico: 🪟 Hyprland (Entorno dinámico tipo Tiling basado en Wayland)
+➪Capa de Estructura: 🎨 Omarchy Framework (Estandarización visual y atajos dinámicos)
+➪Línea de Comandos: 🐟 Fish Shell (Personalizado mediante el asistente Tide)
+
 
 ## --- 🛠️ 1. Programas e Integraciones del Entorno --- ##
 
@@ -49,45 +70,67 @@ sudo pacman -S kitty
 ```bash
 sudo pacman -S dolphin konsole kio-extras
 ```
-9. INSTALACION: Interfaces de comando SHELL 
-    ### Interfaz de comando SHELL: Zsh
+9. ###INSTALACION: Interfaces de comando SHELL 
+    #### Interfaz de comando SHELL: Zsh
 ```bash
 sudo pacman -S zsh     # instala Zsh
 chsh -s /usr/bin/zsh   # hace Zsh el shell predeterminado (Importante reiniciar)
 ```
-    ### Interfaz de comando SHELL: Fish
+    #### Interfaz de comando SHELL: Fish
 ```bash
 sudo pacman -S fish     # instala Fish
 chsh -s /usr/bin/fish   # hace Fish el shell predeterminado
 ```
 
-    ##---PERSONALIZAR: Interfaz de comando SHELL (Fish)---##
-    # Descarga fuentes:
+    ###---9.1. PERSONALIZAR: Interfaz de comando SHELL (Fish)---###
+    #### Descarga fuentes:
+    '''bash
       https://www.nerdfonts.com/font-downloads
-    # Instalar fuente
+    '''
+    #### Instalar fuente
+    '''bash
       sudo pacman -S ttf-jetbrains-mono-nerd
-    # Asistente de diseño (Tide)
+    '''
+    #### Asistente de diseño (Tide)
+    '''bash
       sudo pacman -S tide
-    # Instalar Fisher (gestor de extensiones)
+    '''
+    #### Instalar Fisher (gestor de extensiones)
+    '''bash
       curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-    # Instalar el tema Tide
+    '''
+    #### Instalar el tema Tide
+    '''bash
       fisher install IlanCosman/tide@v6
-    # Ejecuta el comando
+    '''
+    #### Ejecuta el comando
+    '''bash
       tide configure -> #El asistente limpiará la pantalla y te hará una serie de preguntas visuales paso a paso.
+    '''
 
 10. Reproductor multmedia (vlc)
+    '''bash
       sudo pacman -S vlc
+    '''
 11. Lluvia Matrix
+    '''bash
       sudo pacman -S cmatrix
+    '''
 12. Ferdium: Una sola App para Todo (Alternativa Todo-en-Uno)
-    # Si no quieres tener dos aplicaciones abiertas consumiendo memoria por separado, puedes instalar un organizador de mensajería como Ferdium o Rambox. Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
+     Si no quieres tener dos aplicaciones abiertas consumiendo memoria por separado, puedes instalar un organizador de mensajería como Ferdium o Rambox. Te permiten tener WhatsApp, Telegram, Discord y Gmail juntos en una sola ventana usando pestañas laterales.
+     '''bash
       paru -S ferdium-bin
+     '''
 13. fastfetch: Muestra información del sistema en la terminal
+    '''bash
       sudo pacman -S fastfetch
-      fastfetch -> Visual del logo del SO en la terminal
-      micro ~/.config/fish/config.fish -> Abre el archivo de configuración de fish para personalizar la terminal
+      fastfetch #### Visual del logo del SO en la terminal
+      micro ~/.config/fish/config.fish #### Abre el archivo de configuración de fish para personalizar la terminal
+    '''
 14. Visualizador de imágenes (loupe)
+    '''bash
       sudo pacman -S loupe
+    '''
 
 
 ### --- 🎨 2. CONFIGURACION APARIENCIA ENTORNO VISUAL: --- ####
