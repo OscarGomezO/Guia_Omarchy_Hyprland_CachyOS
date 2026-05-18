@@ -320,15 +320,6 @@ killall waybar && waybar &
 ----|
 Documentación: https://github.com/Alexays/Waybar/wiki
 
-```
-    Configuración CachyOS+Omarchy/                                          
-    ├── .config/                                                            
-    │   ├── hypr/                                                           
-    │   │   ├── hyprland.conf 𖤓 <-- Archivo de configuración principal     
-    │   │   ├── keybindings.conf
-    │   │   └── looknfeel.conf  
-```
-
 
 1.4. BLUETHOOT
 Instalación de paquetes.
@@ -348,7 +339,7 @@ Añade la directiva de autoarranque:
 exec-once = blueman-applet
 ```
 
-1.5. Control de ### VOLUMEN ### +/- Visual
+1.5. Control de VOLUMEN +/- Visual
 Instalación de paquetes.
 ```bash
 sudo pacman -S volumeicon pavucontrol
@@ -362,7 +353,7 @@ Añade la directiva de autoarranque:
 exec-once = volumeicon
 ```
 
-1.6. Control de ### BRILLO ### de Pantalla
+1.6. Control de BRILLO de Pantalla
 ```bash
 #Instalación de paquetes.
 sudo pacman -S brightnessctl
@@ -386,7 +377,7 @@ binde = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 ```
 
 
-1.7. Aplicacion ### GRÁFICA ### wdisplays
+1.7. Aplicacion GRÁFICA wdisplays
 Instalación de paquetes.
 ```bash
 sudo pacman -S wdisplays
